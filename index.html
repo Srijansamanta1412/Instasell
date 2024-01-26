@@ -86,10 +86,10 @@
             // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Setting_data
             series.data.setAll([
                 { value: 50, category: "Exception" },
-                { value: 9, category: "Intransit" },
-                { value: 6, category: "Pending" },
-                { value: 5, category: "Delivered" },
-                { value: 4, category: "Out For Delivery" }
+                { value: 45, category: "Intransit" },
+                { value: 65, category: "Pending" },
+                { value: 40, category: "Delivered" },
+                { value: 35, category: "Out For Delivery" }
             ]);
 
 
@@ -113,49 +113,51 @@
     </script>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <li class="nav-item ms-4 me-2" style="border-bottom: 2px solid black;">
+                        <a class="nav-link active" aria-current="page" href="#"><b>Home</b></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                    <li class="nav-item ms-4 me-2">
+                        <a class="nav-link active" aria-current="page" href="#"><b>Orders</b></a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item ms-4 me-2">
+                        <a class="nav-link active" aria-current="page" href="#"><b>Integratioons</b></a>
+                    </li>
+                    <li class="nav-item dropdown ms-4 me-2">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Dropdown
+                            <b>Tracking Page</b>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Action</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    <li class="nav-item ms-4 me-2">
+                        <a class="nav-link active" aria-current="page" href="#"><b>Partner With Us</b></a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <input class="form-control mx-5 me-2" type="search" placeholder="Search" aria-label="Search">
+                    <div class="nav-item mx-2 d-flex" style="justify-content: center; align-items: center;">
+                        <i class="fa-regular fa-user "></i>
+                        <a class="nav-link active mx-2" aria-current="page" href="#">Account</a>
+                    </div>
+                    <div class="nav-item mx-2 me-4 d-flex" style="justify-content: center; align-items: center;">
+                        <i class="fa-solid fa-gear"></i>
+                        <a class="nav-link active mx-2" aria-current="page" href="#">Settings</a>
+                    </div>
+                    
                 </form>
             </div>
         </div>
     </nav>
     <div class="row px-5 py-5" style="background-color: rgb(245, 224, 199);">
         <div class="col-sm-12 mb-4">
-            <h3>Welcome ,John Mathew!!</h3>
+            <h3>Welcome,John Mathew!!</h3>
         </div>
         <div class="col-sm-4">
             <div class="card py-2" style="width: auto; border-radius: 15px;">
@@ -198,16 +200,16 @@
             <h3>Instant Dive Into Performance Metrices</h3>
         </div>
         <div class="col-sm-12 mb-5 d-flex">
+            <button class="btn btn-secondary mt-2 mx-2" style="background-color: rgb(230, 182, 244); color:black; border: 2px solid rgb(148, 53, 216);"
+                type="submit">Lifetime</button>
             <button class="btn btn-secondary mt-2 mx-2" style="background-color: rgb(248, 245, 245); color:black;"
-                type="submit">Copy Link</button>
+                type="submit">Last Week</button>
             <button class="btn btn-secondary mt-2 mx-2" style="background-color: rgb(248, 245, 245); color:black;"
-                type="submit">Copy Link</button>
+                type="submit">Last Month</button>
             <button class="btn btn-secondary mt-2 mx-2" style="background-color: rgb(248, 245, 245); color:black;"
-                type="submit">Copy Link</button>
+                type="submit">Last Year</button>
             <button class="btn btn-secondary mt-2 mx-2" style="background-color: rgb(248, 245, 245); color:black;"
-                type="submit">Copy Link</button>
-            <button class="btn btn-secondary mt-2 mx-2" style="background-color: rgb(248, 245, 245); color:black;"
-                type="submit">Copy Link</button>
+                type="submit">Customize Time Line</button>
         </div>
         <div class="col-sm-5">
             <div id="chartdiv"></div>
@@ -237,7 +239,7 @@
                             <div class="row">
                                 <div class="col-sm-6" style="font-size: 3.5rem;"><b>80</b></div>
                                 <div class="col-sm-6" style="font-size: 3.5rem; text-align: center;">
-                                    <i class="fa-solid fa-eye"></i>
+                                    <i class="fa-solid fa-inbox"></i>
                                 </div>
                             </div>
                         </div>
@@ -275,7 +277,8 @@
                             <p style="border:1px solid black; border-radius: 5px;" class="px-2 py-1">FF9898</p>
                         </div>
                         <div class="col-sm-4">
-                            <p style="background-color: rgb(215, 123, 123); color:rgb(215, 123, 123); border-radius: 5px;" class="px-2 py-1">FF9898</p>
+                            <p style="background-color: rgb(215, 123, 123); color:rgb(215, 123, 123); border-radius: 5px;"
+                                class="px-2 py-1">FF9898</p>
                         </div>
                     </div>
                     <div class="row">
@@ -286,7 +289,8 @@
                             <p style="border:1px solid black; border-radius: 5px;" class="px-2 py-1">571010</p>
                         </div>
                         <div class="col-sm-4">
-                            <p style="border-radius: 5px; background-color: rgb(40, 7, 7); color:rgb(40, 7, 7);" class="px-2 py-1">FF9898</p>
+                            <p style="border-radius: 5px; background-color: rgb(40, 7, 7); color:rgb(40, 7, 7);"
+                                class="px-2 py-1">FF9898</p>
                         </div>
                     </div>
                     <div class="row">
@@ -297,11 +301,14 @@
                             <p style="border:1px solid black; border-radius: 5px;" class="px-2 py-1">FFEAEA</p>
                         </div>
                         <div class="col-sm-4 ">
-                            <p style="background-color: rgb(231, 190, 190); color:rgb(231, 190, 190); border-radius: 5px;" class="px-2 py-1">FF9898</p>
+                            <p style="background-color: rgb(231, 190, 190); color:rgb(231, 190, 190); border-radius: 5px;"
+                                class="px-2 py-1">FF9898</p>
                         </div>
                     </div>
-                    <button class="btn btn-secondary mt-2" style="background-color: rgb(245, 242, 242); color: black;" type="submit">Preview</button>
-                    <button class="btn btn-secondary mt-2" style="background-color: black;" type="submit">Apply Colours</button>
+                    <button class="btn btn-secondary mt-2" style="background-color: rgb(245, 242, 242); color: black;"
+                        type="submit">Preview</button>
+                    <button class="btn btn-secondary mt-2" style="background-color: black;" type="submit">Apply
+                        Colours</button>
                 </div>
             </div>
         </div>
@@ -334,13 +341,24 @@
             </div>
         </div>
         <div class="col-sm-4">
-            <div class="card py-2" style="width: auto; border-radius:15px; background-color: rgb(234, 211, 134);">
+            <div class="card py-2" style="width: auto; border-radius:15px; background-color: rgb(255, 255, 255);">
                 <div class="card-body">
-                    <h5 class="card-title">Customize Customer Notifications</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <button class="btn btn-secondary mt-2" style="background-color: black;" type="submit">Configure
-                        Notifications</button>
+                    <h5 class="card-title">Seamlessly Integrate Custom HTML Elements</h5>
+                    <p class="card-text">Unleash Creativity with our Custom HTML feature. Add links,custom messages or
+                        any HTML contentt to elevate the tracking page experience for your customers.</p>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            HTML Link
+                        </div>
+                        <div class="col-sm-12">
+                            <p style="border:1px solid black; border-radius: 5px; height:10rem;" class="px-2 py-1">Value
+                            </p>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary mt-2" style="background-color: rgb(245, 242, 242); color: black;"
+                        type="submit">Preview</button>
+                    <button class="btn btn-secondary mt-2" style="background-color: black;" type="submit">Apply
+                        Changes</button>
                 </div>
             </div>
         </div>
